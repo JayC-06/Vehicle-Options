@@ -288,7 +288,15 @@ class Cli {
         },
       ])
       .then((answers) => {
-        console.log(answers)
+        console.log(selectedTruck)
+      if (answers.vehicleToTow.vin === selectedTruck.vin){
+        console.log('Trucks cannot tow trucks.')
+          this.performActions()
+
+      } else {
+        selectedTruck.tow(answers.vehicleToTow)
+        this.performActions()
+      }
         // TODO: check if the selected vehicle is the truck
         // TODO: if it is, log that the truck cannot tow itself then perform actions on the truck to allow the user to select another action
         // TODO: if it is not, tow the selected vehicle then perform actions on the truck to allow the user to select another action
