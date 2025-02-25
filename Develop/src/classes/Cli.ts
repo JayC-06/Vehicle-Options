@@ -176,7 +176,23 @@ class Cli {
           message: 'Enter Towing Capacity',
         },
       ])
-      .then((answers) => {
+      .then((answers) => { 
+        const truck = new Truck(
+          Cli.generateVin(),
+          answers.color,
+          answers.make,
+          answers.model,
+          parseInt(answers.year),
+          parseInt(answers.weight),
+          parseInt(answers.topSpeed),
+          [],
+          parseInt(answers.towingCapacity), 
+          
+
+        );
+        this.vehicles.push(truck);
+        this.selectedVehicleVin = truck.vin;
+        this.performActions();
         // TODO: Use the answers object to pass the required properties to the Truck constructor
         // TODO: push the truck to the vehicles array
         // TODO: set the selectedVehicleVin to the vin of the truck
@@ -272,6 +288,7 @@ class Cli {
         },
       ])
       .then((answers) => {
+        console.log(answers)
         // TODO: check if the selected vehicle is the truck
         // TODO: if it is, log that the truck cannot tow itself then perform actions on the truck to allow the user to select another action
         // TODO: if it is not, tow the selected vehicle then perform actions on the truck to allow the user to select another action
@@ -362,17 +379,18 @@ class Cli {
             }
           }
         }
-        else if (answers.action === 'Tow') {
+        else if (answers.action === 'Tow') { 
+          let truck: Truck | undefined;
           for (let i = 0; i < this.vehicles.length; i++) {
-            if (this.vehicles[i].vin === this.selectedVehicleVin) {
-              const selectedTruck = this.vehicles[i];
-              if (selectedTruck instanceof Truck) {
-                this.findVehicleToTow(selectedTruck);
-                return;
-              } else {
-                console.log('Only trucks can tow');
-              }
+            if (this.vehicles[i].vin === this.selectedVehicleVin && this.vehicles[i] instanceof Truck) {
+          
+             truck=this.vehicles[i] as Truck;
             } 
+          }if (truck) {
+            this.findVehicleToTow(truck);
+            return;
+          } else {
+            console.log('This action is only available for Trucks');
           }
       }
       else if (answers.action === 'Wheelie') {
