@@ -65,7 +65,7 @@ npm install
 
 ## Usage
 
-Video Demo link: 
+Video Demo link: https://drive.google.com/file/d/1uA8b4GRNwkw9HX-IMvErDUvK4Yxp8HFR/preview
 
 Run the application:
 
