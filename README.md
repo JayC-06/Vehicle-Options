@@ -1,5 +1,25 @@
 # Vehicle Management Application
 
+* [Description](#description)
+
+* [Features](#features)
+
+* [Prerequisites](#prerequisites)
+
+* [Installation](#installation)
+
+* [Usage](#usage)
+
+* [Dependencies])
+
+* [Tests](#tests)
+
+* [Email](#email)
+
+* [Credits](#credits)
+
+* [Questions](#questions)
+
 
 ## Description 
 
@@ -30,6 +50,9 @@ Node.js (version 14 or later)
 TypeScript (if applicable)
 
 ## Installation
+
+Clone this repository - git clone https://github.com/JayC-06/Vehicle-Options.git
+
 Required tools: Git Bash, Vs Code and Node.
 
 Clone this repository or copy the source files.
@@ -42,9 +65,9 @@ npm install
 
 ## Usage
 
-Run the application:
+Video Demo link: 
 
-node dist/index.js
+Run the application:
 
 In the terminal type 'NPM start'.
 
@@ -84,4 +107,5 @@ This project is licensed under the MIT license.
 ## Credits 
 Classmates to help fix some coding issues such as Clinton R, Constance Robin for helping with readme set up. Also TA Rene Trevino for helping debug some issues with my code. 
 
-
+Contact
+For questions contact me at: Contreras.josh06@gmail.com
