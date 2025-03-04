@@ -10,7 +10,7 @@
 
 * [Usage](#usage)
 
-* [Dependencies])
+* [Dependencies](#dependencies)
 
 * [Tests](#tests)
 
